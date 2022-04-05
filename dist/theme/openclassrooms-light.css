@@ -1,0 +1,30 @@
+@import './white.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --r-background-color: #fff;
+  --r-main-font: 'Montserrat', Source Sans Pro, Helvetica, sans-serif;
+  --r-main-font-size: 42px;
+  --r-main-color: #222;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: 'Montserrat', Source Sans Pro, Helvetica, sans-serif;
+  --r-heading-color: #003668;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 600;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #7451EB;
+  --r-link-color-dark: #01172c;
+  --r-link-color-hover: #7451EB;
+  --r-selection-background-color: #98bdef;
+  --r-selection-color: #fff;
+  --color-brand: #7451EB;
+}
