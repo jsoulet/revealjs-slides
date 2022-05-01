@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Micro-animations – </title>
+
+		<meta name="description" content="Comment améliorer l'expérience utilisateur d'une application React à l'aide de micro-animations et framer-motion">
+		<meta name="author" content="Johan Soulet">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link data-react-helmet="true" rel="shortcut icon" href="../assets/microinteractions/mickeygloves.png">
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/openclassrooms-light.css" id="theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" ></link>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../plugin/highlight/github-dark-dimmed.css">
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+        <!-- HOME -->
+				<section>			
+          <img src="../assets/microinteractions/plant.gif" alt="" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">  
+					<h3>Microinteractions</h3>
+					<p style="display: flex; flex-direction: column;gap: 2rem; align-items: center;">
+            comment mettre de l'émotion dans mon interface
+					</p>
+					<p>
+						<small>Brown Bag Lunch @Troopers - 3 mai 2022</small>
+					</p>
+				</section>
+        <!-- HOW AM I -->
+        <section>
+          <div style="display: grid; grid-template-columns: 1fr 2fr;">
+            <div style="display: flex; justify-content: center; align-items: center;">
+              <img style="width:150px;border-radius: 100%;"  src="../assets/remotion/profilepic.jpg"/>
+            </div>
+            <div style="display: flex; flex-direction: column;justify-content: center; align-items: center;">
+              <h4>Johan Soulet</h4>
+              <ul style="list-style: none;">
+                <li style="display: flex; align-items: center;"><small>Software engineer chez <a href="https://openclassrooms.com">OpenClassrooms</a></small><img src="../assets/remotion/zozor.png" height="40px"></li>
+                <li><small><a style="display: flex; gap: 0.5rem; align-items: center;" href="https://twitter.com/johansoulet"> <i class="fa-brands fa-twitter" style="color: #1DA1F2"></i> @johansoulet</a></small></li>
+              <ul>
+            </div>
+          <div>
+        </section>
+        <!-- MY UI SUCKS -->
+        <section>
+          <section>
+            <h2>Mes interfaces sont fades</h2>
+          </section>
+					<section>
+						<div>🧑‍🔧</div>
+						<h3>Ce n'est pas un problème "technique"</h3>
+						<ul class="text-left list-none">
+							<li>Un code est optimisé et respecte les standards</li>
+							<li>Des tests unitaires, fonctionnels...</li>
+							<li>Des sondes alerter et corriger rapodement</li>
+						<div>
+					</section>
+					<section>
+						<div>👨‍🎨</div>
+						<h3>Ce n'est pas un problème "design"</h3>
+						<ul class="text-left list-none">
+							<li>Des couleurs, typo, illu... marchent bien ensemble</li>
+							<li>Un design-system pour des composants uniformes</li>
+							<li>Un style qui suit les tendances</li>
+						<div>
+					</section>
+					<section>
+						<div>🧑‍🔬</div>
+						<h3>Ce n'est pas un problème "produit" </h3>
+						<ul class="text-left list-none">
+							<li>Une discovery est bien faite</li>
+							<li>Des features correspondant aux besoins du marché</li>
+							<li>Des retours utilisateurs qui confortent les décisions</li>
+					</ul>
+					</section>
+				</section>
+				<!-- WHAT'S DONE ELSEWHERE -->
+				<section>
+					<section>
+						<div class="grid grid-rows-3 grid-cols-2 justify-items-center">
+							<div><img class="h-40" src="../assets/microinteractions/netflix.png"></div>
+							<div><img class="h-40" src="../assets/microinteractions/disney.png"></div>
+							<div><img class="h-40" src="../assets/microinteractions/airbnb.png"></div>
+							<div><img class="h-40" src="../assets/microinteractions/lbc.svg"></div>
+							<div><img class="h-40" src="../assets/microinteractions/alan.png"></div>
+							<div><img class="h-40" src="../assets/microinteractions/doctolib.png"></div>
+						</div>
+					</section>
+					<section data-background="../assets/microinteractions/ratatouille.gif">
+					</section>
+					<section>
+						<h2>Emotions</h2>
+					</section>
+					<section>
+						<h4>Animations</h4>
+						<div class="fragment">
+							<h2>Microinteractions</h2>
+						</div>
+					</section>
+				</section>
+				<!-- THEORY -->
+				<section>
+					<section>
+						<h2>Un peu de théorie</h2>
+					</section>
+					<section>
+						<div class="grid grid-cols-2">
+							<div class="text-center">
+								<img style="margin: auto" src="../assets/microinteractions/dansaffer.jpeg">
+								<small class="mt-4">Dan Saffer (Product Designer)</small>
+							</div>
+							<div>
+								<h3>Micro-interaction</h3>
+								<h4>=</h4>
+								<h4>Trigger</h4>
+								<h4>+</h4>
+								<h4>Animation</h4>
+							</div>
+							<aside class="notes">
+								Trigger : click, hover, scroll, drag, drop
+							</aside>
+						</div>
+					</section>
+					<section>
+						<div>🧘‍♀️</div>
+						<div>Donner du <b>feedback</b> confirme à l'utilisateur que son action a bien été prise en compte par le système<div>
+						<aside class="notes">
+							UI lente : API pas optimisée, lenteur de réseau, vieille machine, trop de process en parallèle
+						</aside>
+					</section>
+					<section data-background="../assets/microinteractions/switch.jpeg"></section>
+					<section data-background="../assets/microinteractions/elevator.jpeg"></section>
+					<section data-background="../assets/microinteractions/traficlights.jpeg">
+					</section>
+				</section>
+				<!-- DONNER DU FEEDBACK NE SUFFI PAS -->
+				<section>
+					<section>
+						<h3>Donner du feedback ne suffi pas<h3>
+						<div class="fragment flex justify-center"><img src="../assets/microinteractions/loader.gif"/></div>
+					</section>
+					<section>
+						<div class="grid grid-rows-2 grid-cols-2 gap-20 w-full">
+							<div>
+								👨‍🏫<br/>
+								<h4>Expliquer l'interface</h4>
+							</div>
+							<div class="hidden">
+								🚀<br/>
+								<h4>Anticiper la suite</h4>
+							</div>
+							<div class="hidden">
+								✨<br/>
+								<h4>Attirer l'attention</h4>
+							</div>
+							<div class="hidden">
+								🥰<br/>
+								<h4>Créer de l'emotion</h4>
+							</div>
+						</div>
+						<aside class="notes">
+							Ex: Drawers, modales
+						</aside>
+					</section>
+					<section>
+						<div class="flex justify-center">
+							<img src="../assets/microinteractions/twitter-header.gif"/>
+						</div>
+					</section>
+					<section>
+						<div class="grid grid-rows-2 grid-cols-2 gap-20 w-full">
+							<div>
+								👨‍🏫<br/>
+								<h4>Expliquer l'interface</h4>
+							</div>
+							<div>
+								🚀<br/>
+								<h4>Anticiper la suite</h4>
+							</div>
+							<div class="hidden">
+								✨<br/>
+								<h4>Attirer l'attention</h4>
+							</div>
+							<div class="hidden">
+								🥰<br/>
+								<h4>Créer de l'emotion</h4>
+							</div>
+						</div>
+						<aside class="notes">
+							Ex: Burger menu qui se transforme en X pour fermer le menu
+						</aside>
+					</section>
+					<section>
+						<div class="flex justify-center">
+							<img src="../assets/microinteractions/burger-to-cross.gif"/>
+						</div>
+					</section>
+					<section>
+						<div class="grid grid-rows-2 grid-cols-2 gap-20 w-full">
+							<div>
+								👨‍🏫<br/>
+								<h4>Expliquer l'interface</h4>
+							</div>
+							<div>
+								🚀<br/>
+								<h4>Anticiper la suite</h4>
+							</div>
+							<div>
+								✨<br/>
+								<h4>Attirer l'attention</h4>
+							</div>
+							<div class="hidden">
+								🥰<br/>
+								<h4>Créer de l'emotion</h4>
+							</div>
+						</div>
+						<aside class="notes">
+							Afficher des éléments au scroll
+						</aside>
+					</section>
+					<section>
+						<div class="flex justify-center">
+							<img src="../assets/microinteractions/amnesty-cta.gif"/>
+						</div>
+					</section>
+					<section>
+						<div class="grid grid-rows-2 grid-cols-2 gap-20 w-full">
+							<div>
+								👨‍🏫<br/>
+								<h4>Expliquer l'interface</h4>
+							</div>
+							<div>
+								🚀<br/>
+								<h4>Anticiper la suite</h4>
+							</div>
+							<div>
+								✨<br/>
+								<h4>Attirer l'attention</h4>
+							</div>
+							<div>
+								🥰<br/>
+								<h4>Créer de l'emotion</h4>
+							</div>
+						</div>
+						<aside class="notes">
+							Afficher des éléments au scroll
+						</aside>
+					</section>
+					<section>
+						<div class="flex justify-center">
+							<img src="../assets/microinteractions/twitter-like.gif"/>
+						</div>
+					</section>
+					<section>
+						<h4>... et on peut même en mélanger plusieurs pour plus de fun</h4>
+						<div><a href="https://codepen.io/dsenneff/full/jOELxyg">Alien Rating Control</a>, par Darin Senneff</div>
+					</section>
+				</section>
+				<!--  -->
+				<section>
+					<section>
+						<h3>Faire des animations en CSS... la plaie !</h3>
+						<ul>
+							<li class="fragment">Demande de (très) bonnes skills en CSS</li>
+							<li class="fragment">Prend beaucoup de temps</li>
+							<li class="fragment">Orchestration n'est pas naturelle</li>
+							<li class="fragment"><i class="fa-solid fa-arrow-right-long" ></i> Dépriorisé <span class="fragment">🗑</span></li> 
+						</ul>
+					</section>
+					<section>
+            <h3>Mes interfaces sont fades</h3>
+						<h3>...</h3>
+						<h3>parce que je suis nul en CSS</h3>
+          </section>
+					<section data-background="../assets/microinteractions/jesus.jpeg">
+						<h2 style="text-shadow: rgb(0, 0, 0) 5px 0px 0px, rgb(0, 0, 0) 4.90033px 0.993347px 0px, rgb(0, 0, 0) 4.60531px 1.94709px 0px, rgb(0, 0, 0) 4.12668px 2.82321px 0px, rgb(0, 0, 0) 3.48353px 3.58678px 0px, rgb(0, 0, 0) 2.70151px 4.20736px 0px, rgb(0, 0, 0) 1.81179px 4.6602px 0px, rgb(0, 0, 0) 0.849836px 4.92725px 0px, rgb(0, 0, 0) -0.145998px 4.99787px 0px, rgb(0, 0, 0) -1.13601px 4.86924px 0px, rgb(0, 0, 0) -2.08073px 4.54649px 0px, rgb(0, 0, 0) -2.94251px 4.04248px 0px, rgb(0, 0, 0) -3.68697px 3.37732px 0px, rgb(0, 0, 0) -4.28444px 2.57751px 0px, rgb(0, 0, 0) -4.71111px 1.67494px 0px, rgb(0, 0, 0) -4.94996px 0.7056px 0px, rgb(0, 0, 0) -4.99147px -0.291871px 0px, rgb(0, 0, 0) -4.83399px -1.27771px 0px, rgb(0, 0, 0) -4.48379px -2.2126px 0px, rgb(0, 0, 0) -3.95484px -3.05929px 0px, rgb(0, 0, 0) -3.26822px -3.78401px 0px, rgb(0, 0, 0) -2.4513px -4.35788px 0px, rgb(0, 0, 0) -1.53666px -4.75801px 0px, rgb(0, 0, 0) -0.560763px -4.96845px 0px, rgb(0, 0, 0) 0.437495px -4.98082px 0px, rgb(0, 0, 0) 1.41831px -4.79462px 0px, rgb(0, 0, 0) 2.34258px -4.41727px 0px, rgb(0, 0, 0) 3.17346px -3.86382px 0px, rgb(0, 0, 0) 3.87783px -3.15633px 0px, rgb(0, 0, 0) 4.4276px -2.32301px 0px, rgb(0, 0, 0) 4.80085px -1.39708px 0px, rgb(0, 0, 0) 4.98271px -0.415447px 0px; color: #FFF">
+							Framer-motion
+						</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2><code>framer-motion</code></h2>
+						<ul>
+							<li>Librairie pour React</li>
+							<li>Gérer les changements de layout entre plusieurs états</li>
+						<ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Live coding</h2>
+						<p><q>Let's get it started</q> - The Black Eyed Peas</p>
+						<p>🎉</p>
+						<small><a target="_blank" href="https://codesandbox.io/s/bbl-framer-m0rbz6?file=/src/App.tsx"><i class="fa-solid fa-person-digging"></i> CodeSandbox</a></small>
+					</section>
+					<section >
+						<h4>Memo</h4>
+						<ol style="font-size: 0.8rem;">
+							<li>Installation dans le projet</li>
+							<li>Animation simple
+								<ol>
+									<li>au chargement (effet scale)</li>
+									<li>avec un état initial (effet opacity)</li>
+									<li>animation d'une couleur</li>
+								</ol>
+							</li>
+							<li>Les transitions
+								<ol>
+									<li>duration, delay, repeat (number ou Infinity)</li>
+									<li>type: tween, sprint</li>
+								</ol>
+							</li>
+							<li>Les variantes
+								<ol>
+									<li>controlé par un state</li>
+								</ol>
+							</li>
+							</li>
+							<li>Interactions utilisateur
+								<ol>
+									<li>whileTap, whileHover</li>
+									<li>whileInView</li>
+								</ol>
+							</li>
+							<li>Orchestration
+								<ol>
+									<li>Checkbox pour piloter l'affichage</li>
+									<li>variants :<br/>
+										container -> y + opacity<br/>
+										text -> opacity<br/>
+										button -> x<br/>
+									</li>
+									<li>when/staggerChildren/delayChildren</li>
+									<li>propriété <code>custom</code></li>
+								</ol>
+							</li>
+						</ol>
+					</section>
+					<section>
+						<h3>Quelques sujets a creuser</h3>
+						<div class="text-left">
+							<p>Pilotage des animation à l'aide de hooks</p>
+							<p>Animations 3D avec TreeJS</p>
+							<br/>
+							<p>🚩 taille du bundle</p>
+							<p>🚩 accessibilité</p>
+						<div>
+					</section>
+				</section>
+				<section>
+					<h3>Conclusion</h3>
+					<div class="flex justify-center items-center">
+						<img src="../assets/microinteractions/pixar.gif"/>
+					<div>
+				</section>
+				<section style="text-align: left;">
+					<h1>Merci 🙌</h1>
+					<br/>
+					<ul style="list-style: none; margin: 0;">
+						<li style="margin-bottom: 32px;"><a target="_blank" href="https://johansoulet.fr/blog"><i class="fa-solid fa-seedling" style="color: #1DB954"></i> johansoulet.fr/blog</a></li>
+						<li style="margin-bottom: 32px;"><a target="_blank" href="https://twitter.com/johansoulet"><i class="fa-brands fa-twitter" style="color: #1DA1F2"></i> @johansoulet</a></li>
+					</ul>
+					<br/>
+					<br/>
+					<p style="font-size: 1rem;">created with <a href="https://revealjs.com/">reveal.js</a></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/zoom/zoom.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/search/search.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+        slideNumber: 'c/t',
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>

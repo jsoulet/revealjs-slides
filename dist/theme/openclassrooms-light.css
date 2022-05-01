@@ -20,11 +20,20 @@
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
-  --r-code-font: monospace;
+  --r-code-font: monospace; 
   --r-link-color: #7451EB;
   --r-link-color-dark: #01172c;
   --r-link-color-hover: #7451EB;
   --r-selection-background-color: #98bdef;
   --r-selection-color: #fff;
   --color-brand: #7451EB;
+}
+
+.reveal ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.reveal li {
+  margin-bottom: 1rem;
 }
