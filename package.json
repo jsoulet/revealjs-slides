@@ -1,11 +1,6 @@
 {
-  "name": "reveal.js",
-  "version": "4.3.1",
-  "description": "The HTML Presentation Framework",
-  "homepage": "https://revealjs.com",
-  "subdomain": "revealjs",
-  "main": "dist/reveal.js",
-  "module": "dist/reveal.esm.js",
+  "name": "revealjs-slides",
+  "description": "Decks of slides",
   "license": "MIT",
   "scripts": {
     "test": "gulp test",
@@ -13,13 +8,13 @@
     "build": "gulp build"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "https://hakim.se"
+    "name": "Johan Soulet",
+    "email": "johan@soulet.email",
+    "web": "https://johansoulet.fr"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/jsoulet/revealjs-slides.git"
   },
   "engines": {
     "node": ">=10.0.0"
