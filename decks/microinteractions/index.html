@@ -48,7 +48,7 @@
             <div style="display: flex; flex-direction: column;justify-content: center; align-items: center;">
               <h4>Johan Soulet</h4>
               <ul style="list-style: none;">
-                <li style="display: flex; align-items: center;"><small>Software engineer chez <a href="https://openclassrooms.com">OpenClassrooms</a></small><img src="../assets/remotion/zozor.png" height="40px"></li>
+                <li style="display: flex; align-items: center;"><small>Software engineer chez <a href="https://openclassrooms.com">OpenClassrooms</a></small><img src="../assets/remotion/zozor.png" style="height: 40px"></li>
                 <li><small><a style="display: flex; gap: 0.5rem; align-items: center;" href="https://twitter.com/johansoulet"> <i class="fa-brands fa-twitter" style="color: #1DA1F2"></i> @johansoulet</a></small></li>
               <ul>
             </div>
@@ -276,7 +276,7 @@
 						<ul>
 							<li class="fragment">Demande de (très) bonnes skills en CSS</li>
 							<li class="fragment">Prend beaucoup de temps</li>
-							<li class="fragment">Orchestration n'est pas naturelle</li>
+							<li class="fragment">Orchestration n'est pas aisée</li>
 							<li class="fragment"><i class="fa-solid fa-arrow-right-long" ></i> Dépriorisé <span class="fragment">🗑</span></li> 
 						</ul>
 					</section>
@@ -351,14 +351,33 @@
 						</ol>
 					</section>
 					<section>
+						<h3>Quelques points de vigilance</h3>
+						<div class="text-left">
+							<p>🚩 taille du bundle</p>
+							<p><code>import { m } from 'framer-motion'</code></p>
+							<br/>
+							<p>🚩 accessibilité</p>
+							<p><code>import { useReducedMotion } from 'framer-motion'</code></p>
+							<aside class="notes">
+								composant MotionConfig en provider autour de l'APP globale prend un paramètre reducedMotion="user"
+								<br/>
+								désactive les transformations de layout, mais préserve les autres. ex: opacité, backgroundColor
+							</aside>>
+						<div>
+					</section>
+					<section>
 						<h3>Quelques sujets a creuser</h3>
 						<div class="text-left">
+							<p>Drag'n'drop</p>
+							<p>Layout animations</p>
 							<p>Pilotage des animation à l'aide de hooks</p>
 							<p>Animations 3D avec TreeJS</p>
-							<br/>
-							<p>🚩 taille du bundle</p>
-							<p>🚩 accessibilité</p>
 						<div>
+							<aside class="notes">
+								Drag'n'drop: beaucoup d'utilitaires pour faciliter DnD<br/>
+								Même Layout ID = composants animés à partir des uns et des autres<br/>
+								Hooks: 
+							</aside>
 					</section>
 				</section>
 				<section>
