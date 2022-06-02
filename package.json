@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jsoulet/revealjs-slides.git"
+    "url": "git://github.com/jsoulet/slides.git"
   },
   "engines": {
     "node": ">=10.0.0"
