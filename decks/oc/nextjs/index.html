@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>NextJS x OpenClassrooms</title>
+
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../../dist/reset.css">
+		<link rel="stylesheet" href="../../../dist/reveal.css">
+		<link rel="stylesheet" href="../../../dist/theme/openclassrooms-light.css" id="theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" ></link>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../../plugin/highlight/github-dark-dimmed.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+        <!-- HOME -->
+				<section>
+					<a href="https://www.remotion.dev/">
+						<img src="../../assets/oc/nextjs.svg" alt="remotion logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>Initiative NextJS</h3>
+					<p style="display: flex; flex-direction: column;gap: 2rem; align-items: center;">
+            Intégration de NextJS avec la CI/CD
+					</p>
+					<p>
+						<small>Frontend Sharing - 4 Juin 2024</small>
+					</p>
+        </section>
+        
+        <section>
+            <section>
+              <h2>Rappel du contexte</h2>
+            </section>
+            <section>
+              <h3>Pourquoi NextJS</h3>
+              <ul>
+                <li>Modularisation de l'app OpenClassrooms</li>
+                <li>Suivre les recommendations "officielles" de React et s'appuyer sur les frameworks</li>
+              </ul>
+            </section>
+            <section>
+            <h3>Objectif de cette itération</h3>
+            <ul>
+              <li>Créer une première application NextJS</li>
+              <li>Brancher la CI/CD pour faciliter les itérations futures</li>
+              </ul>
+            </section>
+				</section>
+        <section>
+          <section data-auto-animate>
+            <h2>Qu'est-ce qui a été fait</h2>
+          </section>
+          <section data-auto-animate>
+            <h2>Qu'est-ce qui a été fait</h2>
+            <ol>
+              <li>Création d'un module (localisé avec les MFE)</li>
+            </ol>
+          </section>
+          <section data-auto-animate>
+            <h2>Qu'est-ce qui a été fait</h2>
+            <ol>
+              <li>Création d'un module (localisé avec les MFE)</li>
+              <li>Build process : génération d'un set de pages HTML statiques</li>
+            </ol>
+          </section>
+          <section data-auto-animate>
+            <h2>Qu'est-ce qui a été fait</h2>
+            <ol>
+              <li>Création d'un module (localisé avec les MFE)</li>
+              <li>Build process : génération d'un set de pages HTML statiques</li>
+              <li>Déploiement : déplacement des fichiers dans le dossier <code>/web</code> de Symfony pour utiliser le serveur existant</li>
+            </ol>
+          </section>
+          <section data-auto-animate>
+            <h2>En prod depuis une semaine 🎉</h2>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>En prod depuis une semaine 🎉</h2>
+          </section>
+          <section>
+            <h3>Demo time</h3>
+            <p>🔗 <a href="https://openclassrooms.com/app-nextjs-test/index.html">oc.com/app-nextjs-test/index.html</a></p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Problèmes rencontrés</h2>
+          </section>
+          <section>
+            <h3>Build statique</h3>
+            <ul>
+              <li>Nécessité de générer toutes les pages HTML lors du build.</li>
+              <li>La page "dynamique" est générée à la volée lors du build, limitant la dynamique réelle.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Intégration avec les scripts Node existants</h3>
+            <ul>
+              <li>Avantages: Autonomie, en évitant la lourdeur de Codefresh.</li>
+              <li>Inconvénients: Monitoring des performances limité.</li>
+              <li>Solution idéale: Créer une brique de build indépendante.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Hosting sur <code>/code</code></h3>
+            <ul>
+              <li>Fonctionnel et rapide à mettre en place..</li>
+              <li>Inconvénient: Pas de redirection automatique de /next-app vers /next-app/index.html, rendant l'écriture lourde.</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section><h2>Conclusion</h2></section>
+          <section>
+            <h3>Prochaine étape</h3>
+          <ul>
+            <li>Intégration de Classify pour recréer la page d'accueil d'OC.</li>
+            <li>Intégration du SDK</li>
+          </ul>
+          </section>
+          <section>
+            <h3>Partage de la connaissance</h3>
+            <ul>
+              <li>Proposition que le projet soit pris en charge par une autre développeureuse pour partager la connaissance et maintenir la dynamique.</li>
+              <li>Soutien : Nicolas C et Johan</li>
+            </ul>
+          </section>
+          
+
+        </section>
+        <section>
+          <section><h2>One last thing...</h2></section>
+          <section>
+            
+            <img src="../../assets/oc/pablo.jpg" style="mask:
+              radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+              radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+              linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+            clip-path: polygon(-41% 0,50% 91%, 141% 0);"/>
+          </section>
+        </section>
+
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="../../../dist/reveal.js"></script>
+		<script src="../../../plugin/zoom/zoom.js"></script>
+		<script src="../../../plugin/notes/notes.js"></script>
+		<script src="../../../plugin/search/search.js"></script>
+		<script src="../../../plugin/markdown/markdown.js"></script>
+		<script src="../../../plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+        slideNumber: 'c/t',
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
